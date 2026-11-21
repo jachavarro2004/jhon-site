@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jhon · Let the agent run. Deliver only what is proven.</title>
+<meta name="description" content="Jhon, an agent framework for Claude Code and pi: freedom of execution within safety limits, and nothing delivered without evidence.">
+<meta name="color-scheme" content="dark">
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top"><div class="w">
+ <a class="brand" href="#main" aria-label="Jhon, home"><span class="seal" aria-hidden="true">力</span><span class="wm">Jh<em>on</em></span></a>
+ <nav aria-label="Main">
+  <a href="#why">Why</a><a href="#how">How it works</a><a href="#install">Install</a><a href="#docs">Docs</a><a href="#sponsor">Sponsor</a>
+  <a class="gh" href="https://github.com/jachavarro2004/jhon-agent">GitHub <span aria-hidden="true">↗</span></a>
+ </nav>
+</div></header>
+
+<main id="main">
+ <section class="film" aria-labelledby="film-title">
+  <div class="screen">
+   <video id="film" controls preload="none" playsinline width="1920" height="1080"
+     poster="assets/video/stills/intro.png" aria-describedby="film-title">
+    <source src="assets/video/jhon-explainer.mp4" type="video/mp4">
+    <track kind="subtitles" srclang="es" label="Español" src="assets/video/jhon-explainer.es.vtt">
+    <p>Your browser cannot play this video here. <a href="assets/video/jhon-explainer.mp4">Open the presentation (MP4)</a>.</p>
+   </video>
+  </div>
+  <div class="band"><div class="w">
+   <div>
+    <h1 id="film-title">An agent framework for <em>Claude Code and pi.</em></h1>
+    <p>Freedom of execution within safety limits, and nothing delivered without evidence.</p>
+   </div>
+   <div class="cta">
+    <a class="play" href="assets/video/jhon-explainer.mp4" data-play><span class="tri" aria-hidden="true">▶</span><span>Watch the presentation<small>English narration</small></span></a>
+    <div class="subs"><a href="https://github.com/jachavarro2004/jhon-agent/blob/main/docs/assets/video/jhon-explainer.es.mp4" data-play="es">With Spanish subtitles</a></div>
+   </div>
+  </div></div>
+ </section>
+
+ <section class="s" id="why" aria-labelledby="why-title"><div class="w">
+  <p class="kick"><span class="seal" aria-hidden="true">力</span>why jhon</p>
+  <h2 id="why-title">A coding agent left alone is either asked about everything, or <em>trusted with everything.</em></h2>
+  <p class="lead">Jhon takes a third way: the agent gets freedom of execution within safety limits, and nothing is delivered without evidence.</p>
+  <div class="why">
+   <div><h3>The limits are code, not advice.</h3><p>Guards judge every tool call of every agent. A destructive command is refused, an outward-facing one is asked, and you can widen what passes with a mode or a timed grant.</p></div>
+   <div><h3>The evidence is a record.</h3><p>A change's test fails first (RED) and passes after (GREEN) in a recorded run. A change without that record does not get its pull request opened.</p></div>
+   <div><h3>The method is LDD.</h3><p>Leapfrog-Driven Development: value reaches the default branch in integrable, proven slices, with no ceremonies, and every rule stays only while the evidence backs it.</p></div>
+  </div>
+  <p class="not"><b>Not</b> a runtime or a model, <b>not</b> a change to your own setup, <b>not</b> CI. It runs inside Claude Code (<code>jhon start</code>) or pi (<code>jhon start pi</code>).</p>
+ </div></section>
+
+ <section class="s" id="how" aria-labelledby="how-title"><div class="w">
+  <p class="kick"><span class="seal" aria-hidden="true">仕</span>how it works</p>
+  <h2 id="how-title">Four parts, <em>one binary</em> under both runtimes.</h2>
+  <p class="lead">One orchestrator plans the slices and hands work to focused agents, <code>jhon-scout</code>, <code>jhon-builder</code>, <code>jhon-checker</code> and the Prism reviewers, while the <code>jhon</code> binary runs the guards and keeps the records.</p>
+  <div class="how">
+   <article class="card">
+    <div class="shot"><img src="assets/features/executions-red-green.png" width="2458" height="1800" loading="lazy"
+      alt="jhon executions run: a test fails first, exit 1, then passes, exit 0, both recorded"></div>
+    <div class="tx"><p class="kick">ldd</p><h3>Proven slices</h3><p>Intent, RED, GREEN, the slice commit, a verify, delivery. The pull request opens only with RED before GREEN and a passing verify of the tree the last run tested. <code>jhon status</code></p></div>
+   </article>
+   <article class="card">
+    <div class="shot"><img src="assets/features/guard-refusal.png" width="2458" height="788" loading="lazy"
+      alt="scope-guard refuses a jhon-builder edit outside its allowed edit surfaces"></div>
+    <div class="tx"><p class="kick">guards</p><h3>Around every tool call</h3><p>Seven guards, the same in both runtimes. What they refuse stays refused; what they ask, you answer, or your mode and grants answer for you. <code>jhon mode</code>, <code>jhon grant</code></p></div>
+   </article>
+   <article class="card">
+    <div class="prism" role="img" aria-label="The Prism review: four facets, safety, failure, clarity and behavior, then prism-challenger refutes and prism-arbiter confirms">
+     <span>facet<b>safety</b></span><span>facet<b>failure</b></span><span>facet<b>clarity</b></span><span>facet<b>behavior</b></span>
+     <div class="row2"><span>prism-challenger<b>refutes</b></span><span>prism-arbiter<b>confirms</b></span></div>
+    </div>
+    <div class="tx"><p class="kick">prism review</p><h3>A diff, through four facets</h3><p>Safety, failure, clarity and behavior review a frozen diff; a challenger tries to refute each finding and an arbiter confirms the ones that stand. In pi it runs natively in one tool call. <code>jhon review start</code></p></div>
+   </article>
+   <article class="card">
+    <div class="shot"><img src="assets/features/ldd-status.png" width="1080" height="1104" loading="lazy"
+      alt="The shell's LDD section: the change and its route, the next step, the slices with the open one's tasks, the last test run"></div>
+    <div class="tx"><p class="kick">shell + dashboard</p><h3>Where you work</h3><p>pi with Jhon's shell in rose ink: LDD status, agents, jobs and usage a key away. A read-only dashboard on 127.0.0.1:7480 for sessions with their audits, changes and usage. <code>jhon dashboard</code></p></div>
+   </article>
+  </div>
+ </div></section>
+
+ <section class="s" id="install" aria-labelledby="install-title"><div class="w inst">
+  <div>
+   <p class="kick"><span class="seal" aria-hidden="true">始</span>get started</p>
+   <h2 id="install-title">Install, set up, <em>start.</em></h2>
+   <div class="term">
+    <div class="bar"><span class="seal" aria-hidden="true">力</span><span class="kick">install</span>
+     <div class="tabs" role="tablist" aria-label="System" hidden>
+      <button role="tab" type="button" id="tab-sh" aria-controls="panel-sh" aria-selected="true">Linux · WSL 2</button>
+      <button role="tab" type="button" id="tab-ps" aria-controls="panel-ps" aria-selected="false" tabindex="-1">Windows PowerShell</button>
+     </div>
+    </div>
+    <div class="panel" id="panel-sh" role="tabpanel" aria-labelledby="tab-sh">
+     <h3 class="plabel">Linux · WSL 2</h3>
+<pre><span class="p" aria-hidden="true">$ </span><code data-cmd data-install="sh">curl -fsSL https://raw.githubusercontent.com/jachavarro2004/jhon-agent/main/install.sh | sh</code>
+<span class="p" aria-hidden="true">$ </span><code data-cmd>jhon setup</code>      <span class="c"># runtimes, integrations, checks</span>
+<span class="p" aria-hidden="true">$ </span><code data-cmd>jhon start</code>      <span class="c"># Claude Code · or: jhon start pi</span></pre>
+    </div>
+    <div class="panel" id="panel-ps" role="tabpanel" aria-labelledby="tab-ps">
+     <h3 class="plabel">Windows PowerShell</h3>
+<pre><span class="p" aria-hidden="true">&gt; </span><code data-cmd data-install="ps1">irm https://raw.githubusercontent.com/jachavarro2004/jhon-agent/main/install.ps1 | iex</code>
+<span class="p" aria-hidden="true">&gt; </span><code data-cmd>jhon setup</code>      <span class="c"># runtimes, integrations, checks</span>
+<span class="p" aria-hidden="true">&gt; </span><code data-cmd>jhon start</code>      <span class="c"># Claude Code · or: jhon start pi</span></pre>
+    </div>
+    <div class="copy"><span id="copy-status" role="status" aria-live="polite"><code>jhon update</code> verifies sha256 and the release's cosign signature.</span><button type="button" id="copy" hidden>Copy commands</button></div>
+   </div>
+  </div>
+  <ul class="needs" aria-label="What it needs">
+   <li><b>System</b><span>Linux on amd64 or arm64, or Windows with WSL&nbsp;2</span></li>
+   <li><b>Runtimes</b><span>Claude Code (<code>claude</code>) for the Claude Code runtime; node for pi</span></li>
+   <li><b>Always on</b><span>git, engram and codegraph. <code>jhon setup</code> checks each one and says how to fix a missing one.</span></li>
+   <li><b>Health</b><span><code>jhon doctor</code>: every health check, no network call</span></li>
+   <li><b>Update</b><span><code>jhon update</code>, <code>--check</code>, <code>--rollback</code></span></li>
+  </ul>
+ </div></section>
+
+ <section class="s" id="docs" aria-labelledby="docs-title"><div class="w">
+  <p class="kick"><span class="seal" aria-hidden="true">書</span>read more</p>
+  <h2 id="docs-title">The docs live <em>with the code.</em></h2>
+  <nav class="docs" aria-label="Documentation">
+   <a href="https://github.com/jachavarro2004/jhon-agent#readme"><b>README</b><span>The whole picture: LDD, guards, agents, where you work.</span><code>README.md</code></a>
+   <a href="https://github.com/jachavarro2004/jhon-agent/blob/main/docs/ldd.md"><b>LDD in a project</b><span>Layouts, the first change, a worktree per change.</span><code>docs/ldd.md</code></a>
+   <a href="https://github.com/jachavarro2004/jhon-agent/blob/main/docs/modes-and-grants.md"><b>Modes and grants</b><span>Where modes and grants apply.</span><code>docs/modes-and-grants.md</code></a>
+   <a href="https://github.com/jachavarro2004/jhon-agent/blob/main/docs/status-json.md"><b>Status JSON</b><span>The shape of <span class="m">jhon status --json</span>.</span><code>docs/status-json.md</code></a>
+   <a href="https://github.com/jachavarro2004/jhon-agent/blob/main/CHANGELOG.md"><b>Changelog</b><span>What changed, release by release.</span><code>CHANGELOG.md</code></a>
+  </nav>
+  <nav class="anchors" aria-label="In the README">
+   <span>In the README:</span>
+   <a href="https://github.com/jachavarro2004/jhon-agent#ldd-how-a-change-reaches-the-default-branch">LDD</a>
+   <a href="https://github.com/jachavarro2004/jhon-agent#guards-around-every-tool-call">Guards</a>
+   <a href="https://github.com/jachavarro2004/jhon-agent#agents-one-orchestrator-focused-helpers">Agents</a>
+   <a href="https://github.com/jachavarro2004/jhon-agent#you-decide">Modes and grants</a>
+   <a href="https://github.com/jachavarro2004/jhon-agent#get-started">Get started</a>
+   <a href="https://github.com/jachavarro2004/jhon-agent#commands-at-a-glance">Commands</a>
+  </nav>
+ </div></section>
+
+ <section class="s spon" id="sponsor" aria-labelledby="sponsor-title"><div class="w">
+  <p class="kick"><span class="seal" aria-hidden="true">援</span>sponsor</p>
+  <h2 id="sponsor-title">Jhon is free and open source, <em>under <span class="nw">Apache-2.0.</span></em></h2>
+  <p class="lead">Sponsoring pays for the time that goes into each proven release, and keeps Jhon free for everyone.</p>
+  <div class="scta"><a class="btn" href="https://github.com/sponsors/jachavarro2004"><span aria-hidden="true">♥</span> Sponsor on GitHub</a><p>On GitHub Sponsors: a tier, or an amount of your own.</p></div>
+ </div></section>
+</main>
+
+<footer><div class="w">
+ <a class="brand" href="#main" aria-label="Jhon, back to the top"><span class="seal" aria-hidden="true">力</span><span class="wm">Jh<em>on</em></span></a>
+ <span>Apache-2.0</span>
+ <nav aria-label="Footer">
+  <a href="https://github.com/jachavarro2004/jhon-agent">GitHub</a>
+  <a href="https://github.com/jachavarro2004/jhon-agent/releases">Releases</a>
+  <a href="https://github.com/jachavarro2004/jhon-agent/blob/main/LICENSE">License</a>
+  <a href="https://github.com/sponsors/jachavarro2004">Sponsor</a>
+ </nav>
+</div></footer>
+</body>
+</html>

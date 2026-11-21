@@ -1,0 +1,129 @@
+WEBVTT
+
+1
+00:00:01.400 --> 00:00:05.099
+Jhon. Deja correr al agente. Entrega solo lo probado.
+
+2
+00:00:08.700 --> 00:00:14.213
+Un agente de código, solo, o lo pregunta todo o se le confía todo.
+
+3
+00:00:14.763 --> 00:00:20.404
+Si se le confía, puede salirse de su tarea: un comando destructivo, una escritura fuera de sus archivos.
+
+4
+00:00:20.954 --> 00:00:26.125
+Los guards de Jhon juzgan cada llamada a una herramienta: una escritura fuera de sus archivos se rechaza.
+
+5
+00:00:27.425 --> 00:00:32.127
+Puede dar un cambio por hecho sin un test que haya fallado primero y pasado después.
+
+6
+00:00:32.677 --> 00:00:37.678
+Con Jhon, el test falla primero y luego pasa, y las dos ejecuciones quedan registradas.
+
+7
+00:00:38.978 --> 00:00:41.824
+Y lo que se decidió se pierde con la sesión.
+
+8
+00:00:42.374 --> 00:00:47.844
+Con Jhon, el cambio queda a la vista: sus slices, el siguiente paso y la última ejecución de tests.
+
+9
+00:00:49.494 --> 00:00:56.159
+Hay dos formas de entrar: jhon start abre Claude Code, y jhon start pi abre pi, con el shell de Jhon.
+
+10
+00:00:56.709 --> 00:01:03.288
+Los dos runtimes llaman a un solo motor: el binario jhon. El dashboard solo lee lo que sirve el binario.
+
+11
+00:01:04.588 --> 00:01:10.357
+En pi, las barras del shell muestran el proyecto, la rama, el modelo, el contexto, el costo y los trabajos.
+
+12
+00:01:12.007 --> 00:01:16.282
+En un repo aún sin LDD, el trabajo de solo lectura ocurre sin más.
+
+13
+00:01:16.832 --> 00:01:21.427
+En el primer cambio de código, la sesión te pregunta una sola vez cómo entregar y probar.
+
+14
+00:01:23.077 --> 00:01:28.035
+Siete guards juzgan cada llamada a una herramienta, en orden, igual en los dos runtimes.
+
+15
+00:01:28.585 --> 00:01:33.884
+Responde el primer rechazo. Si no hay, la primera pregunta. Si no, la llamada pasa.
+
+16
+00:01:35.534 --> 00:01:40.940
+Con LDD, el valor llega a la rama principal en slices integrables y probados.
+
+17
+00:01:41.490 --> 00:01:47.067
+Cada slice: un test que falla, registrado como RED. Luego el código. Luego los tests, en verde.
+
+18
+00:01:48.367 --> 00:01:53.261
+El pull request solo se abre con RED antes de GREEN y un verify aprobado.
+
+19
+00:01:53.811 --> 00:01:59.388
+Con delivery: change, route-guard rechaza el pull request mientras quede una tarea sin marcar.
+
+20
+00:02:01.038 --> 00:02:05.612
+Un orquestador habla contigo y planifica. Agentes enfocados hacen el trabajo.
+
+21
+00:02:06.162 --> 00:02:09.797
+Cada lanzamiento lleva las decisiones registradas y un mapa del código.
+
+22
+00:02:11.312 --> 00:02:15.886
+Los sub-agentes y los trabajos en segundo plano se ven en vivo, con sus tokens y su tiempo.
+
+23
+00:02:17.536 --> 00:02:22.387
+Un modo y un grant son solo tuyos. Un agente puede leer el modo, nunca fijarlo.
+
+24
+00:02:22.937 --> 00:02:27.532
+Un grant temporal amplía una clase: jhon grant push --for 30m.
+
+25
+00:02:28.832 --> 00:02:34.174
+Credenciales, .git/, los grants y los modos, y los archivos de Jhon siguen rechazados.
+
+26
+00:02:34.724 --> 00:02:38.338
+También las operaciones destructivas que ningún grant cubre.
+
+27
+00:02:39.874 --> 00:02:45.237
+Una carpeta que no es repo no tiene modo: sus llamadas se juzgan como en modo normal.
+
+28
+00:02:46.137 --> 00:02:55.084
+jhon audit lee una sesión después, buscando lo que salió mal. Señala rechazos evitados, entregas sin probar y ediciones antes de RED.
+
+29
+00:02:55.634 --> 00:02:58.864
+Aquí, un push a main sin ninguna ejecución de tests registrada.
+
+30
+00:03:00.784 --> 00:03:10.371
+Con defectos sembrados, la revisión Prism nativa encontró los mismos 9 de 9 que los agentes de facetas, con unas 3,4 veces menos tokens ponderados.
+
+31
+00:03:11.271 --> 00:03:20.048
+Instala con el script de una línea y luego ejecuta jhon setup. jhon doctor ejecuta los chequeos de salud. Luego jhon start, dentro de tu proyecto.
+
+32
+00:03:20.948 --> 00:03:24.647
+Jhon. Deja correr al agente. Entrega solo lo probado.
