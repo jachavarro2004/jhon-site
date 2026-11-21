@@ -117,13 +117,21 @@ jhon audit lee una sesión después, buscando lo que salió mal. Señala rechazo
 Aquí, un push a main sin ninguna ejecución de tests registrada.
 
 30
-00:03:00.784 --> 00:03:10.371
-Con defectos sembrados, la revisión Prism nativa encontró los mismos 9 de 9 que los agentes de facetas, con unas 3,4 veces menos tokens ponderados.
+00:03:00.784 --> 00:03:05.422
+El dashboard muestra la misma auditoría para cada sesión, con lo que hay que revisar primero.
 
 31
-00:03:11.271 --> 00:03:20.048
-Instala con el script de una línea y luego ejecuta jhon setup. jhon doctor ejecuta los chequeos de salud. Luego jhon start, dentro de tu proyecto.
+00:03:06.722 --> 00:03:11.851
+Cada revisión Prism termina en un veredicto registrado, con cada hallazgo y dónde está.
 
 32
-00:03:20.948 --> 00:03:24.647
+00:03:13.151 --> 00:03:22.738
+Con defectos sembrados, la revisión Prism nativa encontró los mismos 9 de 9 que los agentes de facetas, con unas 3,4 veces menos tokens ponderados.
+
+33
+00:03:23.638 --> 00:03:32.415
+Instala con el script de una línea y luego ejecuta jhon setup. jhon doctor ejecuta los chequeos de salud. Luego jhon start, dentro de tu proyecto.
+
+34
+00:03:33.315 --> 00:03:37.014
 Jhon. Deja correr al agente. Entrega solo lo probado.
