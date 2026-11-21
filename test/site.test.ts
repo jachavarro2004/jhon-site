@@ -59,7 +59,7 @@ test("the film loads nothing until asked, with a poster, controls and the Spanis
   assert.match(video, /\scontrols\b/);
   assert.match(video, /\sposter="[^"]+"/);
   const vtt = readFileSync(join(DIST, "assets/video/jhon-explainer.es.vtt"), "utf8");
-  const captions = JSON.parse(readFileSync(join(ROOT, "docs/media/hyperframes/presentation/captions.es.json"), "utf8"));
+  const captions = JSON.parse(readFileSync(join(ROOT, "tools/media/hyperframes/presentation/captions.es.json"), "utf8"));
   assert.match(vtt, /^WEBVTT\n/);
   assert.equal((vtt.match(/ --> /g) ?? []).length, Object.keys(captions).length);
 });

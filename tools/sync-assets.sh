@@ -8,7 +8,7 @@ set -eu
 here=$(cd "$(dirname "$0")/.." && pwd)
 jhon=$(cd "${1:-${JHON_AGENT:-$here/../jhon-agent}}" && pwd)
 src="$jhon/docs/assets"
-pres="$jhon/docs/media/hyperframes/presentation"
+pres="$jhon/tools/media/hyperframes/presentation"
 out="$here/assets"
 mkdir -p "$out/video/stills" "$out/brand" "$out/features"
 # The films: the page plays the English one; Jhon's README links all four here,
