@@ -6,7 +6,8 @@ is, how it works, how to install it, the docs and sponsorship.
 
 - Plain HTML, CSS and a little JavaScript; no framework, no external requests.
   It is served as is from the repository root (GitHub Pages).
-- `assets/` holds copies of Jhon's film, its poster, the brand banner and the
+- `assets/` holds copies of Jhon's films (the presentation and the teaser, each
+  in English and with Spanish subtitles; Jhon's README links them here), the poster, the brand banner and the
   feature screenshots. `tools/sync-assets.sh [jhon-agent checkout]` refreshes
   them and writes the film's Spanish subtitles.
 - `node --experimental-strip-types --test test/site.test.ts` checks the page:

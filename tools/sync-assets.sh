@@ -11,7 +11,9 @@ src="$jhon/docs/assets"
 pres="$jhon/docs/media/hyperframes/presentation"
 out="$here/assets"
 mkdir -p "$out/video/stills" "$out/brand" "$out/features"
-cp "$src/video/jhon-explainer.mp4" "$out/video/"
+# The films: the page plays the English one; Jhon's README links all four here,
+# since Jhon keeps no video in git.
+cp "$src/video/jhon-explainer.mp4" "$src/video/jhon-explainer.es.mp4" "$src/video/jhon-teaser.mp4" "$src/video/jhon-teaser.es.mp4" "$out/video/"
 cp "$src/video/stills/intro.png" "$out/video/stills/"   # the film's poster
 cp "$src"/brand/* "$out/brand/"
 cp "$src"/features/*.png "$out/features/"
