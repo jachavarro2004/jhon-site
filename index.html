@@ -6,6 +6,15 @@
 <title>Jhon · Let the agent run. Deliver only what is proven.</title>
 <meta name="description" content="Jhon, an agent framework for Claude Code and pi: freedom of execution within safety limits, and nothing delivered without evidence.">
 <meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jachavarro2004.github.io/jhon-site/">
+<meta property="og:title" content="Jhon · Let the agent run. Deliver only what is proven.">
+<meta property="og:description" content="Jhon, an agent framework for Claude Code and pi: freedom of execution within safety limits, and nothing delivered without evidence.">
+<meta property="og:image" content="https://jachavarro2004.github.io/jhon-site/assets/video/stills/intro.png">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1080">
+<meta property="og:image:alt" content="The opening frame of Jhon's presentation film">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="style.css">
 <script src="app.js" defer></script>
 </head>
@@ -13,15 +22,14 @@
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="top"><div class="w">
- <a class="brand" href="#main" aria-label="Jhon, home"><span class="seal" aria-hidden="true">力</span><span class="wm">Jh<em>on</em></span></a>
  <nav aria-label="Main">
-  <a href="#why">Why</a><a href="#how">How it works</a><a href="#install">Install</a><a href="#docs">Docs</a><a href="#sponsor">Sponsor</a>
+  <a href="#why">Why</a><a href="#how">How it works</a><a href="#install">Install</a><a href="#docs">Docs</a><a href="#family">Family</a><a href="#sponsor">Sponsor</a>
   <a class="gh" href="https://github.com/jachavarro2004/jhon-agent">GitHub <span aria-hidden="true">↗</span></a>
  </nav>
 </div></header>
 
 <main id="main">
- <section class="film" aria-labelledby="film-title">
+ <section class="film" id="hero" aria-labelledby="film-title">
   <div class="screen">
    <video id="film" controls preload="none" playsinline width="1920" height="1080"
      poster="assets/video/stills/intro.png" aria-describedby="film-title">
@@ -31,13 +39,15 @@
    </video>
   </div>
   <div class="band"><div class="w">
-   <div>
-    <h1 id="film-title">An agent framework for <em>Claude Code and pi.</em></h1>
+   <div class="mark">
+    <img class="banner" src="assets/brand/jhon-banner.gif" alt="Jhon" width="1280" height="400">
+    <h1 id="film-title">Let the agent run. <em>Deliver only what is proven.</em></h1>
+    <p class="sub">An agent framework for Claude Code and pi.</p>
     <p>Freedom of execution within safety limits, and nothing delivered without evidence.</p>
    </div>
    <div class="cta">
     <a class="play" href="assets/video/jhon-explainer.mp4" data-play><span class="tri" aria-hidden="true">▶</span><span>Watch the presentation<small>English narration</small></span></a>
-    <div class="subs"><a href="https://github.com/jachavarro2004/jhon-agent/blob/main/docs/assets/video/jhon-explainer.es.mp4" data-play="es">With Spanish subtitles</a></div>
+    <div class="subs"><a href="assets/video/jhon-explainer.es.mp4" data-play="es">With Spanish subtitles</a></div>
    </div>
   </div></div>
  </section>
@@ -140,22 +150,43 @@
   </nav>
  </div></section>
 
+ <section class="s fam" id="family" aria-labelledby="family-title"><div class="w">
+  <p class="kick"><span class="seal" aria-hidden="true">家</span>one identity</p>
+  <h2 id="family-title">The Jhon family</h2>
+  <ul class="family">
+   <li><a href="https://github.com/jachavarro2004/jhon-agent"><b>jhon-agent</b></a>: the framework.</li>
+   <li><a href="https://github.com/jachavarro2004/jhon-studio"><b>jhon-studio</b></a>: presentation videos for any project.</li>
+   <li class="here" aria-current="page"><b>The landing</b>: Jhon's site, jachavarro2004.github.io/jhon-site <span>(you are here)</span>.</li>
+   <li><a href="https://github.com/jachavarro2004"><b>The profile</b></a>: the author's GitHub profile, github.com/jachavarro2004.</li>
+   <li><a href="https://www.youtube.com/channel/UCprv0NKifqqMb-zzrBdXb9g"><b>YouTube</b></a>: Jhon's films, a video for every release.</li>
+  </ul>
+ </div></section>
+
  <section class="s spon" id="sponsor" aria-labelledby="sponsor-title"><div class="w">
   <p class="kick"><span class="seal" aria-hidden="true">援</span>sponsor</p>
-  <h2 id="sponsor-title">Jhon is free and open source, <em>under <span class="nw">Apache-2.0.</span></em></h2>
-  <p class="lead">Sponsoring pays for the time that goes into each proven release, and keeps Jhon free for everyone.</p>
-  <div class="scta"><a class="btn" href="https://github.com/sponsors/jachavarro2004"><span aria-hidden="true">♥</span> Sponsor on GitHub</a><p>On GitHub Sponsors: a tier, or an amount of your own.</p></div>
+  <h2 id="sponsor-title">Support <em>Jhon</em></h2>
+  <p class="lead">Jhon is free and open source.<br>
+   If it helps you, donate any amount you choose,<br>
+   once or monthly, on GitHub Sponsors.<br>
+   If you can't donate, a ⭐ on the <a href="https://github.com/jachavarro2004/jhon-agent">repo</a> helps<br>
+   keep the project maintained.</p>
+  <div class="scta"><a class="btn" href="https://github.com/sponsors/jachavarro2004"><span aria-hidden="true">♥</span> Sponsor on GitHub</a></div>
  </div></section>
 </main>
 
 <footer><div class="w">
- <a class="brand" href="#main" aria-label="Jhon, back to the top"><span class="seal" aria-hidden="true">力</span><span class="wm">Jh<em>on</em></span></a>
+ <a class="brand" href="#main">Back to the top</a>
  <span>Apache-2.0</span>
  <nav aria-label="Footer">
-  <a href="https://github.com/jachavarro2004/jhon-agent">GitHub</a>
   <a href="https://github.com/jachavarro2004/jhon-agent/releases">Releases</a>
   <a href="https://github.com/jachavarro2004/jhon-agent/blob/main/LICENSE">License</a>
   <a href="https://github.com/sponsors/jachavarro2004">Sponsor</a>
+ </nav>
+ <nav aria-label="The Jhon family">
+  <a href="https://github.com/jachavarro2004/jhon-agent">jhon-agent</a>
+  <a href="https://github.com/jachavarro2004/jhon-studio">jhon-studio</a>
+  <a href="https://github.com/jachavarro2004">Profile</a>
+  <a href="https://www.youtube.com/channel/UCprv0NKifqqMb-zzrBdXb9g">YouTube</a>
  </nav>
 </div></footer>
 </body>
