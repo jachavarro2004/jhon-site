@@ -34,7 +34,6 @@ const decode = (s: string): string =>
 
 // Hosts a link (<a href>) may leave the page for: GitHub, and the family's YouTube channel.
 const LINK_HOSTS = new Set(["github.com", "www.youtube.com"]);
-const YOUTUBE = "https://www.youtube.com/channel/UCprv0NKifqqMb-zzrBdXb9g";
 // The words a reader sees: block ends and <br> read as a space, inline tags as nothing.
 const text = (src: string): string =>
   decode(src.replace(/<br\s*\/?>|<\/(?:p|h[1-6]|li|div|ul|nav)>/g, " ").replace(/<[^>]+>/g, "")).replace(/\s+/g, " ").trim();
@@ -116,37 +115,19 @@ test("the sponsor section is the support block: any amount, no tier, and a star"
   const words = text(spon);
   assert.ok(
     words.includes(
-      "Jhon is free and open source. If it helps you, donate any amount you choose, once or monthly, on GitHub Sponsors. " +
+      "jhon-agent is free and open source. If it helps you, donate any amount you choose, once or monthly, on GitHub Sponsors. " +
         "If you can't donate, a ⭐ on the repo helps keep the project maintained.",
     ),
     words,
   );
+  assert.match(spon, /<h2\b[^>]*>Support <em>jhon-agent<\/em><\/h2>/, "the heading names jhon-agent, not bare Jhon");
   assert.match(spon, /<a\b[^>]*href="https:\/\/github\.com\/sponsors\/jachavarro2004"[^>]*>[\s\S]*?♥[\s\S]*?Sponsor on GitHub<\/a>/);
   assert.match(spon, /href="https:\/\/github\.com\/jachavarro2004\/jhon-agent"/, "the star line links the repo");
   assert.doesNotMatch(text(html), /\btiers?\b|\$\s?\d/i, "no tier and no amount anywhere");
 });
 
-test("the Jhon family: five, the landing marked as here, linked from the footer", () => {
-  const fam = section("family");
-  assert.match(fam, /<h2\b[^>]*>The Jhon family<\/h2>/);
-  const items = (fam.match(/<li\b[\s\S]*?<\/li>/g) ?? []).map(text);
-  assert.deepEqual(items, [
-    "jhon-agent: the framework.",
-    "jhon-studio: presentation videos for any project.",
-    "The landing: Jhon's site, jachavarro2004.github.io/jhon-site (you are here).",
-    "The profile: the author's GitHub profile, github.com/jachavarro2004.",
-    "YouTube: Jhon's films, a video for every release.",
-  ]);
-  const footer = html.match(/<footer\b[\s\S]*?<\/footer>/)?.[0] ?? "";
-  for (const u of [
-    "https://github.com/jachavarro2004/jhon-agent",
-    "https://github.com/jachavarro2004/jhon-studio",
-    "https://github.com/jachavarro2004",
-    YOUTUBE,
-  ]) {
-    assert.ok(fam.includes(`href="${u}"`), `family links ${u}`);
-    assert.ok(footer.includes(`href="${u}"`), `footer links ${u}`);
-  }
+test("no family section: no section, nav link or footer list", () => {
+  assert.doesNotMatch(html, /id="family"|href="#family"|The Jhon family|class="family"/);
 });
 
 test("the look is Jhon's: rose ink, Fraunces, Space Grotesk, FiraCode as the mono", () => {
