@@ -128,15 +128,6 @@ code{font-size:.9em;color:var(--rosa)}
 .anchors a{color:var(--soft)}
 .anchors a:hover{color:var(--rosa)}
 
-/* the family */
-.family{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line)}
-.family li{padding:22px 20px;border-right:1px solid var(--line);color:var(--soft);font-size:15px;min-width:0}
-.family li:last-child{border-right:0}
-.family b{font:500 20px var(--display);color:var(--ink)}
-.family a{text-decoration:none}
-.family a:hover b{color:var(--rosa)}
-.family .here{background:var(--bg)}
-.family .here span{color:var(--rosa);font:600 12px var(--mono);letter-spacing:.06em}
 
 /* sponsor */
 .spon{background:var(--bg)}
@@ -175,9 +166,6 @@ footer nav a:hover{color:var(--rosa)}
   .docs a{border-right:0;border-bottom:1px solid var(--line);min-height:0}
   .docs a:last-child{border-bottom:0}
   .film .banner{width:100%;max-width:420px}
-  .family{grid-template-columns:1fr}
-  .family li{border-right:0;border-bottom:1px solid var(--line)}
-  .family li:last-child{border-bottom:0}
   .scta{flex-direction:column;align-items:flex-start}
   .needs li{grid-template-columns:1fr;gap:2px}
   .copy{flex-wrap:wrap}

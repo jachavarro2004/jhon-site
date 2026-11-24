@@ -18,8 +18,7 @@
 
 The page for [Jhon](https://github.com/jachavarro2004/jhon-agent), an agent
 framework for Claude Code and pi: the presentation film first, then what Jhon
-is, how it works, how to install it, the docs, the Jhon family and the
-support block. It is served at
+is, how it works, how to install it, the docs and the support block. It is served at
 [jachavarro2004.github.io/jhon-site](https://jachavarro2004.github.io/jhon-site/).
 
 - Plain HTML, CSS and a little JavaScript; no framework, no external requests.
@@ -37,17 +36,9 @@ support block. It is served at
 
 The page's text is in English.
 
-## The Jhon family
+## Support jhon-site
 
-- **[jhon-agent](https://github.com/jachavarro2004/jhon-agent)**: the framework.
-- **[jhon-studio](https://github.com/jachavarro2004/jhon-studio)**: presentation videos for any project.
-- **The landing**: Jhon's site, jachavarro2004.github.io/jhon-site (you are here).
-- **[The profile](https://github.com/jachavarro2004)**: the author's GitHub profile, github.com/jachavarro2004.
-- **[YouTube](https://www.youtube.com/channel/UCprv0NKifqqMb-zzrBdXb9g)**: Jhon's films, a video for every release.
-
-## Support Jhon
-
-Jhon is free and open source.
+jhon-site is free and open source.
 If it helps you, donate any amount you choose,
 once or monthly, on GitHub Sponsors.
 If you can't donate, a ⭐ on the repo helps
