@@ -15,9 +15,9 @@ Jhon is maintained by one person. Pick the place that fits what you have:
   Code or pi).
 - **A security problem:** never in public; see [SECURITY.md](SECURITY.md).
 
-## Support jhon-site
+## Support Jhon
 
-jhon-site is free and open source.
+Jhon is free and open source.
 If it helps you, donate any amount you choose,
 once or monthly, on GitHub Sponsors.
 If you can't donate, a ⭐ on the repo helps

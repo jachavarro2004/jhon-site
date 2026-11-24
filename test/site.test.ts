@@ -115,12 +115,12 @@ test("the sponsor section is the support block: any amount, no tier, and a star"
   const words = text(spon);
   assert.ok(
     words.includes(
-      "jhon-agent is free and open source. If it helps you, donate any amount you choose, once or monthly, on GitHub Sponsors. " +
+      "Jhon is free and open source. If it helps you, donate any amount you choose, once or monthly, on GitHub Sponsors. " +
         "If you can't donate, a ⭐ on the repo helps keep the project maintained.",
     ),
     words,
   );
-  assert.match(spon, /<h2\b[^>]*>Support <em>jhon-agent<\/em><\/h2>/, "the heading names jhon-agent, not bare Jhon");
+  assert.match(spon, /<h2\b[^>]*>Support <em>Jhon<\/em><\/h2>/, "the site is social, not a product: Support Jhon");
   assert.match(spon, /<a\b[^>]*href="https:\/\/github\.com\/sponsors\/jachavarro2004"[^>]*>[\s\S]*?♥[\s\S]*?Sponsor on GitHub<\/a>/);
   assert.match(spon, /href="https:\/\/github\.com\/jachavarro2004\/jhon-agent"/, "the star line links the repo");
   assert.doesNotMatch(text(html), /\btiers?\b|\$\s?\d/i, "no tier and no amount anywhere");
