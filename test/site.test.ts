@@ -1,6 +1,7 @@
 /**
  * Jhon's landing page (site/): what it loads, what it links, and that its
- * install commands are the README's.
+ * install commands are the README's; and this repo's README: the shared
+ * skeleton (S12) with media GitHub renders.
  *
  *   node --test site/test/site.test.ts
  */
@@ -162,4 +163,80 @@ test("the README anchors the page links to are the README's headings", () => {
   const anchors = [...html.matchAll(/href="https:\/\/github\.com\/jachavarro2004\/jhon-agent#([^"]+)"/g)].map((m) => m[1]);
   assert.ok(anchors.length >= 2);
   for (const a of anchors) assert.ok(heads.has(a), `no README heading for #${a}`);
+});
+
+// The README (S12): the shared skeleton every Jhon README follows, with media GitHub renders.
+const README_FILM = "https://github.com/user-attachments/assets/e5d924c2-0a05-4a5f-82a9-1ab303276258";
+const README_FILM_ES = "https://github.com/user-attachments/assets/0ae10efb-b546-4f5c-be7d-87e6415f27fa";
+const readme = (): string => readFileSync(join(SITE, "README.md"), "utf8");
+// The README's level-2 section, from its heading to the next one.
+const readmeSection = (md: string, name: string): string => {
+  const start = md.indexOf(`\n## ${name}\n`);
+  if (start < 0) return "";
+  const next = md.indexOf("\n## ", start + 1);
+  return md.slice(start, next < 0 ? undefined : next);
+};
+
+test("the README follows the shared skeleton: banner, tagline, badges, then its sections in order", () => {
+  const md = readme();
+  const banner = md.indexOf('<img src="assets/brand/jhon-banner.gif" alt="Jhon"');
+  const tagline = md.indexOf("<b>Let the agent run. Deliver only what is proven.</b><br>\n  An agent framework for Claude Code and pi.");
+  const badges = ["alt=\"License: Apache-2.0\"", "alt=\"CI\"", "alt=\"GitHub Sponsors\"", "alt=\"Stars\""].map((b) => md.indexOf(b));
+  assert.equal(banner, md.indexOf("<img"), "the README opens with the banner GIF");
+  assert.ok(banner < tagline, "the tagline sits under the banner");
+  for (const [i, b] of badges.entries()) assert.ok(b > (i === 0 ? tagline : badges[i - 1]), `badge ${i} in order under the tagline`);
+  // Headings outside code blocks (a shell comment in a fence is not one).
+  const heads = md.replace(/^```[\s\S]*?^```/gm, "").split("\n").filter((l) => /^#{1,2} /.test(l));
+  assert.deepEqual(heads, [
+    "## See it",
+    "## What it is",
+    "## Use",
+    "## How it works",
+    "## Docs",
+    "## Support jhon-agent",
+    "## License",
+  ]);
+  assert.ok(md.indexOf("\n## See it\n") > badges[3], "See it comes after the badges");
+  assert.doesNotMatch(md, /famil/i, "no family wording");
+});
+
+test("the README's See it block shows the page and plays the film on GitHub", () => {
+  const md = readme();
+  const see = readmeSection(md, "See it");
+  assert.doesNotMatch(md, /<video\b/i, "no <video> tag: GitHub does not play it");
+  // GitHub embeds a user-attachments player only for a URL alone on its line, with blank lines around.
+  for (const url of [README_FILM, README_FILM_ES]) assert.ok(see.includes(`\n\n${url}\n\n`), `${url} alone on its line`);
+  const details = see.match(/<details>\s*<summary>With Spanish subtitles<\/summary>([\s\S]*?)<\/details>/)?.[1] ?? "";
+  assert.ok(details.includes(README_FILM_ES), "the Spanish film is inside the details block");
+  assert.ok(!details.includes(README_FILM), "the English film plays outside it");
+  const shots = [...see.matchAll(/<img\b[^>]*\ssrc="([^"]+)"[^>]*>/g)];
+  assert.equal(shots.length, 2, "a desktop and a narrow screenshot");
+  for (const [img, src] of shots) {
+    assert.match(src, /^(?:docs|assets)\/readme\/[\w.-]+\.(?:png|webp)$/, src);
+    assert.match(img, /\salt="[^"]*\S[^"]*"/, img);
+    assert.ok(existsSync(join(SITE, src)), `missing ${src}`);
+    const size = readFileSync(join(SITE, src)).length;
+    assert.ok(size < 400 * 1024, `${src} is ${size} bytes`);
+  }
+});
+
+test("the README's How it works draws the page, its assets and the sync tool; Support is the block", () => {
+  const md = readme();
+  const how = readmeSection(md, "How it works");
+  const diagram = how.match(/```mermaid\n([\s\S]*?)```/)?.[1] ?? "";
+  assert.ok(diagram, "a mermaid diagram GitHub renders");
+  for (const part of ["index.html", "style.css", "app.js", "assets/", "tools/sync-assets.sh", "jhon-agent"]) {
+    assert.ok(diagram.includes(part), `the diagram shows ${part}`);
+  }
+  for (const [, link, src] of md.matchAll(/\]\(([^)#]+)(?:#[^)]*)?\)|\s(?:src|href)="([^"#]+)"/g)) {
+    const ref = link ?? src;
+    if (!isExternal(ref)) assert.ok(existsSync(join(SITE, ref)), `README links a missing ${ref}`);
+  }
+  assert.ok(
+    readmeSection(md, "Support jhon-agent").includes(
+      "\n\njhon-agent is free and open source.\nIf it helps you, donate any amount you choose,\nonce or monthly, on GitHub Sponsors.\n" +
+        "If you can't donate, a ⭐ on the [repo](https://github.com/jachavarro2004/jhon-agent) helps\nkeep the project maintained.\n\n" +
+        "[♥ Sponsor on GitHub](https://github.com/sponsors/jachavarro2004)\n",
+    ),
+  );
 });
